@@ -1,0 +1,9 @@
+frontend/runtime/*
+backend/runtime/*
+.idea
+*.log
+*.DS_Store
+backend/web/assets/*
+frontend/web/assets/*
+sftp-config.json
+.ftpconfig
