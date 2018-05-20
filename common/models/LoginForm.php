@@ -12,7 +12,7 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
-
+    public $verifyCode;
     private $_user;
 
 
@@ -26,11 +26,17 @@ class LoginForm extends Model
             [['username', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
+            ['verifyCode', 'captcha'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
-
+    
+    public function attributeLabels() {
+        return [
+            'verifyCode' => '验证码', //验证码的名称，根据个人喜好设定
+        ];
+    }
     /**
      * Validates the password.
      * This method serves as the inline validation for password.

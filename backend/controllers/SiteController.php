@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','captcha'],
                         'allow' => true,
                     ],
                     [
@@ -49,6 +49,19 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' =>  [
+                'class' => 'yii\captcha\CaptchaAction',
+                'height' => 40,
+                'width' => 100,
+                'minLength' => 4,
+                'maxLength' => 4,
+                'backColor' => 0xf7f7f7,
+                'foreColor' => 0x4fa693,
+                'padding' => 0,
+                'transparent' => true,
+                'offset' => 5,
+                // 'fontFile' => '@yii/captcha/SerDomingo.ttf'
             ],
         ];
     }
