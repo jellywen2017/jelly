@@ -1,25 +1,21 @@
 <?php
 
-$config = [
-    'components' => [
-        'request' => [
+$config = [];
+
+$params = array_merge(
+    require __DIR__ . '/../../common/config/params-local.php',
+    require __DIR__ . '/../../common/config/params-important.php',
+    require __DIR__ . '/params-local.php'
+);
+
+$components = [];
+
+$components['request'] = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
-        ],
-    ],
-];
+            'cookieValidationKey' => 'JV5RirLx_fsvpJLpqeA_44-lnVqJStwG',
+        ];
 
-if (!YII_ENV_TEST) {
-    // configuration adjustments for 'dev' environment
-    $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
-    ];
-
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-    ];
-}
+$config['components']=$components;
+$config['params']=$params;
 
 return $config;

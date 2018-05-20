@@ -1,7 +1,7 @@
 <?php
 $env = get_cfg_var('env');
 $env = $env ? $env : 'dev';
-defined('YII_DEBUG') or define('YII_DEBUG', $env == 'dev' ? true : false);
+defined('YII_DEBUG') or define('YII_DEBUG', $env == 'prod' ? true : false);
 defined('YII_ENV') or define('YII_ENV', 'prod');
 
 require __DIR__ . '/../../vendor/autoload.php';

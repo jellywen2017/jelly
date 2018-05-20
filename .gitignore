@@ -1,3 +1,5 @@
+environments/prod/common/config/main-important.php
+environments/prod/common/config/params-important.php
 frontend/runtime/*
 backend/runtime/*
 .idea
