@@ -1,5 +1,5 @@
 <?php
-use mdm\admin\classes\MenuHelper;
+use mdm\admin\components\MenuHelper;
 
 ?>
 <aside class="main-sidebar">
