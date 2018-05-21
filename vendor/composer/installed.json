@@ -1367,29 +1367,38 @@
     },
     {
         "name": "mdmsoft/yii2-admin",
-        "version": "3.2",
-        "version_normalized": "3.2.0.0",
+        "version": "2.8",
+        "version_normalized": "2.8.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/mdmsoft/yii2-admin.git",
-            "reference": "8d1e133c6efaf013d84692673846824626b62843"
+            "reference": "48298cb2891f728ae93e59f75802607f0ed910f5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/8d1e133c6efaf013d84692673846824626b62843",
-            "reference": "8d1e133c6efaf013d84692673846824626b62843",
+            "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/48298cb2891f728ae93e59f75802607f0ed910f5",
+            "reference": "48298cb2891f728ae93e59f75802607f0ed910f5",
             "shasum": ""
         },
         "require": {
-            "deesoft/yii2-adminlte": "~1.0",
-            "deesoft/yii2-angular": "~1.3",
-            "yiisoft/yii2": ">=2.0.6"
+            "yiisoft/yii2": "~2.0.7"
         },
-        "time": "2015-09-05T07:07:03+00:00",
+        "require-dev": {
+            "yiisoft/yii2-codeception": "~2.0"
+        },
+        "suggest": {
+            "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
+        },
+        "time": "2017-10-04T02:54:53+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
-                "dev-3.master": "3.x-dev"
+                "dev-1.0.master": "1.0.x-dev",
+                "dev-master": "2.x-dev"
+            },
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
             }
         },
         "installation-source": "dist",
@@ -1411,10 +1420,8 @@
         "description": "RBAC Auth manager for Yii2 ",
         "keywords": [
             "admin",
-            "angularjs",
             "auth",
             "rbac",
-            "rest",
             "yii"
         ]
     },

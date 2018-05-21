@@ -9,8 +9,62 @@ return [
     'name' => '管理后台',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
-    'modules' => [],
+    'bootstrap' => ['log','admin'],
+    'modules' => [
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            // 'layout' => 'main',
+            'controllerMap' => [
+                 'assignment' => [
+                    'class' => 'mdm\admin\controllers\AssignmentController',
+                    'userClassName' => 'common\models\User', 
+                    'idField' => 'id',
+                    'usernameField' => 'username',
+                    'fullnameField' => 'email',
+                    // 'extraColumns' => [
+                    //     [
+                    //         'attribute' => 'full_name',
+                    //         'label' => 'Full Name',
+                    //         'value' => function($model, $key, $index, $column) {
+                    //             return $model->profile->full_name;
+                    //         },
+                    //     ],
+                    //     [
+                    //         'attribute' => 'dept_name',
+                    //         'label' => 'Department',
+                    //         'value' => function($model, $key, $index, $column) {
+                    //             return $model->profile->dept->name;
+                    //         },
+                    //     ],
+                    //     [
+                    //         'attribute' => 'post_name',
+                    //         'label' => 'Post',
+                    //         'value' => function($model, $key, $index, $column) {
+                    //             return $model->profile->post->name;
+                    //         },
+                    //     ],
+                    // ],
+                    // 'searchClass' => 'common\models\UserSearch'
+                ],
+            ],
+        ]
+    ],
+    'as access' => [
+        'class' => 'mdm\admin\classes\AccessControl',
+        'allowActions' => [
+            'site/*',
+            'admin/*',
+            // 'some-controller/some-action',
+            // The actions listed here will be allowed to everyone including guests.
+            // So, 'admin/*' should not appear here in the production, of course.
+            // But in the earlier stages of your development, you may probably want to
+            // add a lot of actions here until you finally completed setting up rbac,
+            // otherwise you may not even take a first step.
+        ]
+    ],
+    "aliases" => [    
+        "@mdm/admin" => "@vendor/mdmsoft/yii2-admin",
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
