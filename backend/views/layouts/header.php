@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 <header class="main-header">
 
-    <?= Html::a('<span class="logo-mini">导航</span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
+<!--     <?= Html::a('<span class="logo-mini">导航</span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?> -->
 
     <nav class="navbar navbar-static-top" role="navigation">
 
@@ -241,6 +241,7 @@ use yii\helpers\Html;
                         </li>
                     </ul>
                 </li>
+                
                 <!-- User Account: style can be found in dropdown.less -->
 
                 <li class="dropdown user user-menu">
