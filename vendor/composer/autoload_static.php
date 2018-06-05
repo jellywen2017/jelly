@@ -88,6 +88,7 @@ class ComposerStaticInit1ac71fbd29fb391c5073f6d89f93095c
         ),
         'C' => 
         array (
+            'Curl\\' => 5,
             'Composer\\Installers\\' => 20,
             'Codeception\\PHPUnit\\' => 20,
             'Codeception\\Extension\\' => 22,
@@ -221,6 +222,10 @@ class ComposerStaticInit1ac71fbd29fb391c5073f6d89f93095c
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl',
         ),
         'Composer\\Installers\\' => 
         array (
