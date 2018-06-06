@@ -1,4 +1,5 @@
 <?php
+
 $env = get_cfg_var('env');
 $env = $env ? $env : 'dev';
 defined('YII_DEBUG') or define('YII_DEBUG', $env == 'dev' ? true : false);

@@ -16,7 +16,7 @@ $config['components']=$components_merge;
 $config['bootstrap'][] = 'debug';
 $config['modules']['debug'] = [
     'class' => 'yii\debug\Module',
-    'allowedIPs' => ['127.0.0.1', '::1', '58.34.27.240'],
+    'allowedIPs' => ['127.0.0.1', '::1', '58.34.27.240','210.22.100.162','180.167.156.62'],
 ];
 
 $config['bootstrap'][] = 'gii';
