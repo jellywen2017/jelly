@@ -22,4 +22,8 @@ class YiiAsset extends AssetBundle
     public $depends = [
         'yii\web\JqueryAsset',
     ];
+        //将默认js 放至开头
+    public $jsOptions = [
+        'position' => View::POS_HEAD,
+    ];
 }

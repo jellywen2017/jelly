@@ -19,4 +19,5 @@ class JqueryAsset extends AssetBundle
     public $js = [
         'jquery.js',
     ];
+
 }
