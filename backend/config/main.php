@@ -48,9 +48,6 @@ return [
                 ],
             ],
         ],
-        'backup' => [
-            'class' => 'yiier\backup\Module',
-        ],
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',

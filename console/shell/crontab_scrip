@@ -1,0 +1,6 @@
+#定时任务
+
+#每天8:30数据库备份 
+30 8 * * * /bin/mkdir -p /data/logs/crontab ; /usr/local/php/bin/php /data/www/jelly/yii backup > /data/logs/crontab/mysql_backup.log 2>&1 &
+
+#最后一行要有空格
