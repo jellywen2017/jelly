@@ -112,4 +112,13 @@ return array (
       '@yii/redis' => $vendorDir . '/yiisoft/yii2-redis/src',
     ),
   ),
+  'yiier/yii2-backup' => 
+  array (
+    'name' => 'yiier/yii2-backup',
+    'version' => '1.1.2.0',
+    'alias' => 
+    array (
+      '@yiier/backup' => $vendorDir . '/yiier/yii2-backup',
+    ),
+  ),
 );

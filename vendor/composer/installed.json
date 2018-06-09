@@ -3729,6 +3729,50 @@
         ]
     },
     {
+        "name": "yiier/yii2-backup",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiier/yii2-backup.git",
+            "reference": "6331c5284923714a3fd60e34af1ec3564f7d885f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/yiier/yii2-backup/6331c5284923714a3fd60e34af1ec3564f7d885f.zip",
+            "reference": "6331c5284923714a3fd60e34af1ec3564f7d885f",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-03-10T07:29:04+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yiier\\backup\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "forecho",
+                "email": "caizhenghai@gmail.com"
+            }
+        ],
+        "description": "Database Backup and Restore functionality",
+        "keywords": [
+            "backup",
+            "extension",
+            "yii2",
+            "yii2-backup"
+        ]
+    },
+    {
         "name": "yiisoft/yii2",
         "version": "2.0.15.1",
         "version_normalized": "2.0.15.1",

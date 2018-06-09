@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'yiier\\backup\\' => array($vendorDir . '/yiier/yii2-backup'),
     'yii\\swiftmailer\\' => array($vendorDir . '/yiisoft/yii2-swiftmailer/src'),
     'yii\\redis\\' => array($vendorDir . '/yiisoft/yii2-redis/src'),
     'yii\\gii\\' => array($vendorDir . '/yiisoft/yii2-gii/src'),

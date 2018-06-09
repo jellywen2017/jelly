@@ -1,3 +1,4 @@
 <?php
-$params = [];
+$params = [
+];
 return $params;

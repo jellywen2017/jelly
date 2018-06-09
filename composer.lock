@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "745de336113d8c0fad492cf08fa4e1af",
+    "content-hash": "2d5bc83b6837e7ba443dd5ee611fbb7b",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -860,6 +860,48 @@
                 "mailer"
             ],
             "time": "2017-09-30T22:39:41+00:00"
+        },
+        {
+            "name": "yiier/yii2-backup",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiier/yii2-backup.git",
+                "reference": "6331c5284923714a3fd60e34af1ec3564f7d885f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiier/yii2-backup/6331c5284923714a3fd60e34af1ec3564f7d885f.zip",
+                "reference": "6331c5284923714a3fd60e34af1ec3564f7d885f",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yiier\\backup\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "forecho",
+                    "email": "caizhenghai@gmail.com"
+                }
+            ],
+            "description": "Database Backup and Restore functionality",
+            "keywords": [
+                "backup",
+                "extension",
+                "yii2",
+                "yii2-backup"
+            ],
+            "time": "2016-03-10T07:29:04+00:00"
         },
         {
             "name": "yiisoft/yii2",
