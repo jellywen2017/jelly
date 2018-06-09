@@ -1,4 +1,6 @@
 <?php
-return [
+$params = [
     'adminEmail' => 'jellywen@koudailc.com',
 ];
+
+return $params;

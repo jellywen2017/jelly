@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use common\helpers\Res;
 use Curl\Curl;
+use common\services\WxService;
 
 /**
  * Site controller
@@ -42,24 +43,32 @@ class WxController extends BaseController
      * @return   [type]                   [description]
      */
     public function actionGetToken(){
-        $params = [
-            'grant_type'=>'client_credential',
-            'appid'=>'wx42fceae230f2e3cf',
-            'secret'=>'49aebd63400e98945fb096ce3e133920',
-            ];
-        $curl = new Curl();
-        $curl->setTimeout(10);
-        $curl->get('https://api.weixin.qq.com/cgi-bin/token',$params);
-        if ($curl->error) {
-            return Res::json($curl->errorCode, null, $curl->errorMessage);
-        }
-        $data = $curl->response;
-        // Yii::$app->redis->set('access_token',$data['access_token']);
-        // Yii::$app->redis->expire()
+
+        $data = WxService::getNewToken();
+
         return Res::json(Res::CODE_SUCCESS, $data);
         
     }
 
+    /**
+     * @name 微信网页授权 获取code 后可以获取open_id
+     * @author jellywen
+     * @DateTime 2018-06-06T16:27:40+0800
+     * @return   [type]                   [description]
+     */
+    public function actionGetCode(){
+
+        $login_url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/site/login";
+
+        $random_str = 'jellywen';
+
+        $new_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".Yii::$app->params['weixin']['appid']."&redirect_uri=".$login_url."&response_type=code&scope=snsapi_userinfo&state=".$random_str."#wechat_redirect";
+ 
+        header("Location: ".$new_url);
+
+        //确保重定向后，后续代码不会被执行   
+        exit;  
+    }
 
     /**
      * @name 更新菜单
@@ -74,40 +83,45 @@ class WxController extends BaseController
             "button":[
                 {
                    "type":"view",
-                    "name":"首页",
+                    "name":"代扣",
                     "url":"http://www.baidu.com"
                 },
                {
                     "type":"view",
-                    "name" : "A股点买",
+                    "name" : "放款",
                     "url":"http://www.baidu.com"
                 },{
-                    "name" : "我的账户",
+                    "name" : "其他",
                     "sub_button":[
                         {
                             "type":"view",
-                            "name":"个人中心",
+                            "name":"股票",
                             "url":"http://www.baidu.com"
                         },
                         {
                             "type":"view",
-                            "name":"帮助中心",
+                            "name":"数据",
                             "url":"http://www.baidu.com"
                         }
                     ]
                 }
                 
             ]}';
+
         $curl = new Curl();
         $curl->setTimeout(10);
-        $curl->post('https://api.weixin.qq.com/cgi-bin/menu/create?access_token=10_xdHaGcfGdcrlvDm_RTl5xH4nDz6UcdDNlWJq0mEkQuk6CbBjGu9gtS1xWtkBD839G_DnpO5-9UFxAzVTQgEUTdxR0A6nkv1Ov7HJS65s9kKkMrVBvHiijd2DSuQUNKjAJAEXU',$xjson);
+        $access_token = WxService::getToken();
+        $curl->post('https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.$access_token,$xjson);
+
         if ($curl->error) {
             return Res::json($curl->errorCode, null, $curl->errorMessage);
         }
+
         return Res::json(Res::CODE_SUCCESS, $curl->response);
 
     }
 }
 
-//https://open.weixin.qq.com/connect/qrconnect?appid=wx42fceae230f2e3cf&redirect_uri=https://jellywen.cn/wx/receive-wx-call&response_type=code&scope=snsapi_login&state=STATE
-
+//https://open.weixin.qq.com/connect/qrconnect?appid=wx42fceae230f2e3cf&redirect_uri=https://jellywen.cn/wx/receive-wx-call&response_type=code&scope=snsapi_base&state=3d6be0a4035d839573b04816624a415e#wechat_redirect
+//
+//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42fceae230f2e3cf."&redirect_uri=https://jellywen.cn/wx/receive-wx-call&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect

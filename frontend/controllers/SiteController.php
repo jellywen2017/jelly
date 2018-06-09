@@ -12,12 +12,19 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use yii\web\Response;
+use common\services\WxService;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
+
+    public function init(){
+        parent::init();
+        Yii::$app->response->format = Response::FORMAT_HTML;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -82,6 +89,9 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $data = WxService::getCodeToken(Yii::$app->request->get('code'));
+        echo var_dump($data);die;
+
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
