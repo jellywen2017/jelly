@@ -36,6 +36,7 @@ use yii\helpers\Html;
 <!--                 <li class=" ">
                     <a href="https://jellywen.cn" style="font-size: 16px;" >工具</a>
                 </li> -->
+
                 <!-- 个人github -->
                 <li class=" ">
                     <a href="https://github.com/jellywen2017" style="font-size: 16px;" >GitHub</a>
@@ -45,10 +46,15 @@ use yii\helpers\Html;
                     <a href="https://hub.docker.com/u/jellywen" style="font-size: 16px;" >DockerHub</a>
                 </li>
 
-                <!-- User Account: style can be found in dropdown.less -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <li class=" ">
+                    <a href="/site/logout" data-method="post" style="font-size: 16px;" >退出</a>
                 </li>
+
+            
+                <!-- User Account: style can be found in dropdown.less -->
+<!--                 <li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                </li> -->
             </ul>
         </div>
     </nav>
