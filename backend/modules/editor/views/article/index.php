@@ -80,14 +80,20 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div id="editor-container"></div>
     </div>
-
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" ></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="/js/quill/image-drop.min.js"></script>
+    <script src="/js/quill/image-paste.min.js"></script>
+   <!--  <script src="/js/quill/image-resize.min.js"></script> -->
     <script type="text/javascript">
     $(function () {
          var quill = new Quill('#editor-container', {
             modules: {
+              // ImageResize: {},
+              imagePaste: {},
+              imageDrop: true,
               formula: true,
               syntax: true,
               toolbar: '#toolbar-container'
