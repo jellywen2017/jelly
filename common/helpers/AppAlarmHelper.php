@@ -1,5 +1,5 @@
 <?php
-namespace common\helper;
+namespace common\helpers;
 
 use Yii;
 use yii\base;

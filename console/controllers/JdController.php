@@ -22,7 +22,9 @@ class JdController extends BaseMongoController {
         $degree = $data->resultData->datas->degree;
         $degreeDate = $data->resultData->datas->degreeDate;
 
-        AppAlarmHelper::sendAlarm("热度:".$degree." 日期:".$degreeDate);
+        $msg = "热度:".$degree." 日期:".$degreeDate;
+        echo $msg;
+        AppAlarmHelper::sendAlarm($msg);
     }
 
 }
